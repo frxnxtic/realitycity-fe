@@ -1,0 +1,106 @@
+@import "base.css";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+html {
+  --orange: rgb(182, 144, 111);
+}
+
+header {
+  
+  background-image: url("https://blenderartists.org/uploads/default/original/4X/6/9/2/692b2e29c5a043f7e2d510acd750003ad0fe13d2.jpeg");
+  background-color: #fff;
+  background-blend-mode: multiply;
+  background-size: cover;
+  color: white;
+  padding: 1em;
+  align-items: center;
+}
+
+.social {
+  /* мне нужно создать 4 кнопки полукругом с разными иконками */
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+header .header-img {
+  display: flex;
+  justify-content: center;
+}
+
+header .header-img img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 250px;
+  height: 300px;
+  border-width: 0.1px;
+  border-color: black;
+  box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, 1);
+
+}
+
+header .header-text {
+  color: white;
+  text-align: center;
+  display: block;
+  margin: 0;
+  height: fit-content;
+}
+
+
+
+header .header-text h1 {
+  font-family: "Dm Serif Display", serif;
+  font-size: 6em;
+  margin-bottom: -0.8em;
+}
+
+header .header-text h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 4em;
+  color: var(--orange);
+  margin-top: 0px;
+}
+
+.container {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.container .user h2 {
+  font-size: 2.2em;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.container .user .position {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  color: var(--orange);
+}
+
+
+.custom-list {
+  list-style: none;
+}
+
+.custom-list li {
+  display: flex;
+  align-items: center;
+}
+
+.custom-list li .special {
+  margin-right: 20px;
+}

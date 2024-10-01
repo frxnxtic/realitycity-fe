@@ -46,12 +46,57 @@
                 <ul class="custom-list">
                     <li><i class="fas fa-envelope special"></i>{{ user.email }}</li>
                     <li><i class="fas fa-phone special"></i> {{ user.phone }}</li>
-                    <li><i class="fas fa-map special" </i> {{ user.address }}</li>
+                    <li><i class="fas fa-map special" ></i> {{ user.address }}</li>
+                </ul>
+                <div class="text">
+
+                    <p>Náš tím skúsených maklérov a finančných 
+                        poradcov poskytuje profesionálne služby v 
+                        oblasti predaja, kúpy a prenájmu 
+                        nehnuteľností. <br>
+                        
+                       <br> S namy investujete do svojej budúcnosti s 
+                        istotou a dôverou.</p>
+                    </div>
+    <br><br>
+    <div>
+    <div class="header-text">
+        <h1>Realicity</h1>
+        <p class="position">Aktuálna ponuka</p>
+        <div class="img">
+        <a href="https://realicity.sk/nehnutelnosti"><img src="https://i.ibb.co/xstSzQ0/ap.png" alt="ap"></a>
+    </div>
+    <a href="https://realicity.sk/nehnutelnosti" style="color: var(--orange)">Click to open the link...</a>
+</div>
+            </div>
+            <div class="sluzby">
+                <h2>Naše služby:</h2>
+                
+                <ul>
+                    <h3>NEHNUTEĽNOSTI</h3>
+                    <li>Nastavenie stratégie predaja</li>
+                    <li>Homestaging</li>
+                    <li>Fotografie / Video obhliadka</li>
+                    <li>Sociálny marketing</li>
+                    <li>Reklama</li>
+                    <li>Právne služby</li>
+                </ul><br>
+                <ul>
+                    <h3>FINANCIE</h3>
+                    <li>Hypotekárne poradenstvo</li>
+                    <li>Predčasné splatenie hypotéky</li>
+                    <li>Poistenie nehnuteľnosti</li>
+                    <li>Životné poistenie a poistenie úveru</li>
+                    <li>Pravidelné investovanie</li>
+                    <li>Jednorazové investovanie</li>
                 </ul>
             </div>
-            <footer>
+        </div>
+
+
+        <footer>
                 <p>© 2024 Realicity</p>
-            </footer>
+        </footer>
         </div>
     </div>
 </template>
@@ -242,6 +287,12 @@ header {
     border-color: rgba(255, 255, 255, 0.250);
 
 }
+.img {
+    
+    border-width: 20px;
+    border-color: rgba(255, 255, 255, 0.250);
+
+}
 
 header .header-text {
     color: white;
@@ -346,6 +397,11 @@ footer {
     position: relative;
 }
 
+.sluzby{
+    text-align: left;
+    padding: 5px;
+}
+
 .share-popup {
     color: black;
     position: fixed;
@@ -377,5 +433,13 @@ footer {
     right: 20px;
     font-size: 30px;
     cursor: pointer;
+}
+
+.text {
+    text-align: center;
+    position: relative;
+    max-width: 320px; 
+    word-break: break-word;
+    margin-top: 1.2em;
 }
 </style>

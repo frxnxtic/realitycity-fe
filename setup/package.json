@@ -11,6 +11,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "html2pdf.js": "^0.10.2",
+    "qrcode": "^1.5.4",
+    "qrcode.vue": "^3.5.0",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },

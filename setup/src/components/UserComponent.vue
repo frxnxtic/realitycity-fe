@@ -5,17 +5,17 @@
                 <h1>Realicity</h1>
                 <h2>Reality & Financie</h2>
             </div>
-            <div class="header-img">
-                <img :src="user.photo_url" alt="1724682873955" border="0">
-            </div>
         </header>
 
         <div class="container">
             <div class="user">
+                <div class="header-img">
+                    <img :src="user.photo_url" alt="1724682873955" border="0">
+                </div>
                 <h2>{{ user.first_name }} {{ user.last_name }} </h2>
                 <p class="position">{{ user.position }}</p>
                 <!-- мне нужно создать 4 кнопки полукругом с разными иконками -->
-                <div class="buttons">
+                <div class="buttons" ref="lol">
                     <button class="btn" @click="downloadPDF"><i class="fas fa-download"></i></button>
                     <a href="https://realicity.sk/" target="_blank"><button class="btn"><i
                                 class="fas fa-globe"></i></button></a>
@@ -98,7 +98,7 @@ export default {
             const element = this.$refs.download; // Reference to the template content
 
             // Check if the element is defined
-            if (!element) {
+            if (!element || element === this.$refs.lol) {
                 alert('Content to print is not available!');
                 return;
             }
@@ -110,11 +110,11 @@ export default {
             // Create the PDF filename based on initials and surname
             const pdfFilename = `${userInitial}${userSurname}.pdf`; // Example: "jdoe.pdf"
             const options = {
-                margin: 1,
+                margin: 0,
                 filename: pdfFilename,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
-                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                html2canvas: { scale: 4, useCORS: true },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
 
             console.log('Downloading PDF...');
@@ -163,7 +163,7 @@ body {
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
-
+    background-color: #1a1c23;
 }
 
 header {
@@ -177,6 +177,7 @@ header {
     color: white;
     padding: 1em;
     align-items: center;
+    height: 50vh;
 }
 
 .buttons {
@@ -215,12 +216,13 @@ header {
     /* Цвет фона при наведении */
 }
 
-header .header-img {
+.header-img {
     display: flex;
     justify-content: center;
+    margin-top: -15em;
 }
 
-header .header-img img {
+.header-img img {
     object-fit: cover;
     border-radius: 50%;
     width: 250px;

@@ -1,5 +1,7 @@
 @import "base.css";
 
 html {
-  --orange: rgb(182, 144, 111);
+  --orange: #b6906f;
+  --grey: #1a1c23;
+  --grey-popup: #585a5f;
 }

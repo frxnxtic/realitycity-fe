@@ -25,7 +25,7 @@
                             <div class="popup-content">
                                 <span class="close" @click="isPopupVisible = false">&times;</span>
                                 <h3>Scan QR Code</h3>
-                                <qrcode-canvas :value="url"></qrcode-canvas>
+                                <qrcode-canvas :background="'#b6906f'" :foreground="'#000'" :value="url"></qrcode-canvas>
                                 <p>{{ url }}</p>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                                 <h3>Copy link</h3>
                                 <textarea>{{ url }}</textarea>
                                 <br>
-                                <button @click="copyToClipboard"><i class="fas fa-copy"></i></button>
+                                <button class="copy" @click="copyToClipboard"><i class="fas fa-copy"></i></button>
                             </div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dancing+Script:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Kameron:wght@400..700&display=swap');
 @import "../assets/main.css";
 
 body {
@@ -219,7 +219,7 @@ body {
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
-    background-color: #1a1c23;
+    background-color: var(--grey);
 }
 
 header {
@@ -318,7 +318,8 @@ header .header-text h2 {
 }
 
 .container {
-    font-family: "Inter", sans-serif;
+    /* font-family: "Afacad Flux", sans-serif; */
+    font-family: "Kameron", serif;
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
@@ -331,14 +332,14 @@ header .header-text h2 {
 }
 
 .container .user h2 {
-    font-size: 2.2em;
+    font-size: 2.5em;
     margin: 0;
     padding: 0;
     font-weight: 500;
 }
 
 .container .user .position {
-    font-size: 1.5em;
+    font-size: 1.7em;
     margin: 0;
     padding: 0;
     font-weight: 500;
@@ -354,10 +355,12 @@ header .header-text h2 {
 .custom-list li {
     display: flex;
     align-items: center;
+    margin: 1.2em 0;
 }
 
 .custom-list li .special {
-    margin-right: 20px;
+    margin-right: 30px;
+    font-size: 1.7em;
     color: var(--orange);
 }
 
@@ -390,11 +393,12 @@ footer {
 
 /* Popup content */
 .popup-content {
-    background-color: #fff;
+    background-color: var(--grey-popup);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     position: relative;
+    color: var(--orange);
 }
 
 .sluzby{
@@ -418,12 +422,23 @@ footer {
 
 /* Popup content */
 .share-popup-content {
-    background-color: #fff;
-    padding: 20px;
+    background-color: var(--grey-popup);
+    padding: 30px;
     border-radius: 10px;
     text-align: center;
     position: relative;
+    width: 30%;
+    color: var(--orange);
+}
 
+.share-popup-content textarea {
+    width: 100%;
+    height: 1.8em;
+    text-align: center;
+    resize: none;
+    border: 1px solid var(--orange);
+    background-color: var(--grey);
+    color: var(--orange);
 }
 
 /* Close button */
@@ -435,11 +450,74 @@ footer {
     cursor: pointer;
 }
 
-.text {
-    text-align: center;
-    position: relative;
-    max-width: 320px; 
-    word-break: break-word;
-    margin-top: 1.2em;
+
+.copy {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+/* Для мобильных устройств с шириной экрана меньше 768px */
+@media only screen and (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1em;
+        background-size: cover; /* Исправление фона */
+        background-position: center; /* Центрируем фон */
+        background-repeat: no-repeat; /* Отключаем повторение фона */
+    }
+
+    header .header-text h1 {
+        font-size: 3em;
+    }
+
+    header .header-text h2 {
+        font-size: 2em;
+    }
+
+    .header-img img {
+        width: 150px;
+        height: 150px;
+        margin-top: -10em;
+    }
+
+    .buttons {
+        gap: 1em;
+        padding: 1em;
+        justify-content: space-around; /* Распределяем кнопки по всей ширине */
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 1em;
+        min-height: auto;
+    }
+
+    .custom-list {
+        font-size: medium;
+    }
+
+    .custom-list li {
+        font-size: 1.2em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+
+    .text {
+        text-align: center;
+        position: relative;
+        max-width: 320px; 
+        word-break: break-word;
+        margin-top: 1.2em;
+    }
 </style>

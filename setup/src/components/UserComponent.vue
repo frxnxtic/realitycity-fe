@@ -61,8 +61,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 import html2pdf from 'html2pdf.js';
 import axios from 'axios'
-import QRCodeVue, { QrcodeCanvas } from 'qrcode.vue';
-import Qrcode from 'qrcode.vue';
+import { QrcodeCanvas } from 'qrcode.vue';
 
 export default {
     data() {
@@ -71,6 +70,9 @@ export default {
             isPopupVisible: false,
             isSharePopupVisible: false,
             url: window.location.href,
+            buttons : this.$refs.lol,
+
+
         }
     },
 
@@ -96,9 +98,9 @@ export default {
         },
         async downloadPDF() {
             const element = this.$refs.download; // Reference to the template content
-
+            const buttons = this.$refs.lol; // Reference to the buttons
             // Check if the element is defined
-            if (!element || element === this.$refs.lol) {
+            if (!element) {
                 alert('Content to print is not available!');
                 return;
             }
@@ -106,6 +108,10 @@ export default {
             const userName = this.user.first_name; // Full name (e.g., "John Doe")
             const userSurname = this.user.last_name; // Extract surname (e.g., "Doe")
             const userInitial = userName.charAt(0).toLowerCase(); // First letter of the name (e.g., "j")
+
+            if (buttons) {
+                buttons.style.display = 'none'; // Скрываем кнопки
+            }
 
             // Create the PDF filename based on initials and surname
             const pdfFilename = `${userInitial}${userSurname}.pdf`; // Example: "jdoe.pdf"
@@ -129,6 +135,11 @@ export default {
                 console.error('Error generating PDF:', error);
                 alert('Failed to generate PDF. Check the console for errors.');
             }
+
+            if (buttons) {
+                buttons.style.display = 'flex'; // Показываем кнопки
+            }
+
         },
         copyToClipboard() {
             navigator.clipboard.writeText(this.url).then(() => {

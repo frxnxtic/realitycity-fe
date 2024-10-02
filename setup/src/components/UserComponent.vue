@@ -111,7 +111,7 @@
 
             <footer>
                 <p>© 2024 Realicity</p>
-                <!-- KHH Team: Kozlov, Haidosh, Hryshchenko -->
+                <p>Created by KHH team: Kozlov, Haidosh, Hryshchenko</p>
             </footer>
         </div>
     </div>
@@ -392,11 +392,10 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2rem;
-    display: flex;
+    height: 3rem;
+    display: block;
     justify-content: center;
     align-items: center;
-    z-index: 0;
 }
 
 .popup {

@@ -12,7 +12,7 @@
                 <div class="header-img">
                     <img :src="user.photo_url" alt="1724682873955" border="0">
                 </div>
-                <h2>{{ user.first_name }} {{ user.last_name }} </h2>
+                <h2 class="name-surname">{{ user.first_name }} {{ user.last_name }} </h2>
                 <p class="position">{{ user.position }}</p>
                 <!-- мне нужно создать 4 кнопки полукругом с разными иконками -->
                 <div class="buttons" ref="lol">
@@ -25,7 +25,8 @@
                             <div class="popup-content">
                                 <span class="close" @click="isPopupVisible = false">&times;</span>
                                 <h3>Scan QR Code</h3>
-                                <qrcode-canvas :background="'#b6906f'" :foreground="'#000'" :value="url"></qrcode-canvas>
+                                <qrcode-canvas :background="'#b6906f'" :foreground="'#000'"
+                                    :value="url"></qrcode-canvas>
                                 <p>{{ url }}</p>
                             </div>
                         </div>
@@ -46,57 +47,72 @@
                 <ul class="custom-list">
                     <li><i class="fas fa-envelope special"></i>{{ user.email }}</li>
                     <li><i class="fas fa-phone special"></i> {{ user.phone }}</li>
-                    <li><i class="fas fa-map special" ></i> {{ user.address }}</li>
+                    <li><i class="fas fa-map special"></i> {{ user.address }}</li>
                 </ul>
                 <div class="text">
-
-                    <p>Náš tím skúsených maklérov a finančných 
-                        poradcov poskytuje profesionálne služby v 
-                        oblasti predaja, kúpy a prenájmu 
+                    <p>Náš tím skúsených maklérov a finančných
+                        poradcov poskytuje profesionálne služby v
+                        oblasti predaja, kúpy a prenájmu
                         nehnuteľností. <br>
-                        
-                       <br> S namy investujete do svojej budúcnosti s 
-                        istotou a dôverou.</p>
+
+                        <br> S namy investujete do svojej budúcnosti s
+                        istotou a dôverou.
+                    </p>
+                </div>
+                <br><br>
+                <div>
+                    <div class="actual-text">
+                        <h1>Realicity</h1>
+                        <h2>Aktuálna ponuka</h2>
+                        <div class="img">
+                            <a target="_blank" href="https://realicity.sk/nehnutelnosti"><img
+                                    src="https://i.ibb.co/xstSzQ0/ap.png" alt="ap"></a>
+                        </div>
+                        <a href="https://realicity.sk/nehnutelnosti" style="color: var(--orange)">Click to open the
+                            link...</a>
                     </div>
-    <br><br>
-    <div>
-    <div class="header-text">
-        <h1>Realicity</h1>
-        <p class="position">Aktuálna ponuka</p>
-        <div class="img">
-        <a href="https://realicity.sk/nehnutelnosti"><img src="https://i.ibb.co/xstSzQ0/ap.png" alt="ap"></a>
-    </div>
-    <a href="https://realicity.sk/nehnutelnosti" style="color: var(--orange)">Click to open the link...</a>
-</div>
-            </div>
-            <div class="sluzby">
-                <h2>Naše služby:</h2>
-                
-                <ul>
-                    <h3>NEHNUTEĽNOSTI</h3>
-                    <li>Nastavenie stratégie predaja</li>
-                    <li>Homestaging</li>
-                    <li>Fotografie / Video obhliadka</li>
-                    <li>Sociálny marketing</li>
-                    <li>Reklama</li>
-                    <li>Právne služby</li>
-                </ul><br>
-                <ul>
-                    <h3>FINANCIE</h3>
-                    <li>Hypotekárne poradenstvo</li>
-                    <li>Predčasné splatenie hypotéky</li>
-                    <li>Poistenie nehnuteľnosti</li>
-                    <li>Životné poistenie a poistenie úveru</li>
-                    <li>Pravidelné investovanie</li>
-                    <li>Jednorazové investovanie</li>
-                </ul>
-            </div>
-        </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <h2 class="well">Naše služby:</h2>
+                <div class="sluzby">
 
+                    <ul class="left">
+                        <h3>NEHNUTEĽNOSTI</h3>
+                        <li>Nastavenie stratégie predaja</li>
+                        <li>Homestaging</li>
+                        <li>Fotografie / Video obhliadka</li>
+                        <li>Sociálny marketing</li>
+                        <li>Reklama</li>
+                        <li>Právne služby</li>
+                    </ul>
+                    <ul class="right">
+                        <h3>FINANCIE</h3>
+                        <li>Hypotekárne poradenstvo</li>
+                        <li>Predčasné splatenie hypotéky</li>
+                        <li>Poistenie nehnuteľnosti</li>
+                        <li>Životné poistenie a poistenie úveru</li>
+                        <li>Pravidelné investovanie</li>
+                        <li>Jednorazové investovanie</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>Kontakt</h2>
+                <img src="https://i.ibb.co/gJJ018L/image.png" alt="image" border="0"><br>
+                <p>+421 917 203 738</p><br>
+                <p>PANÓNSKA CESTA 17, 85101<br>
+                BRATISLAVA</p>
+                <a class="emphasis" href="mailto:info@realicity.sk"><p class="emphasis">INFO@REALICITY.SK</p></a>
+            </div>
 
-        <footer>
+<br><br><br>
+
+            <footer>
                 <p>© 2024 Realicity</p>
-        </footer>
+            </footer>
         </div>
     </div>
 </template>
@@ -115,7 +131,7 @@ export default {
             isPopupVisible: false,
             isSharePopupVisible: false,
             url: window.location.href,
-            buttons : this.$refs.lol,
+            buttons: this.$refs.lol,
 
 
         }
@@ -213,7 +229,7 @@ body {
 }
 
 .user {
-    padding-bottom: 2.5rem;
+    padding-bottom: 2rem;
     width: 100%;
     display: flex;
     /* justify-content: center; */
@@ -266,6 +282,11 @@ header {
     transition: background-color 0.3s ease;
 }
 
+hr {
+    width: 80%;
+    border: 1px solid var(--orange);
+}
+
 .btn:hover {
     background-color: rgb(135, 108, 83);
     ;
@@ -287,11 +308,10 @@ header {
     border-color: rgba(255, 255, 255, 0.250);
 
 }
+
 .img {
-    
     border-width: 20px;
     border-color: rgba(255, 255, 255, 0.250);
-
 }
 
 header .header-text {
@@ -320,7 +340,7 @@ header .header-text h2 {
 .container {
     /* font-family: "Afacad Flux", sans-serif; */
     font-family: "Kameron", serif;
-    display: flex;
+    display: block;
     justify-content: space-between;
     /* align-items: center; */
     text-align: center;
@@ -328,10 +348,11 @@ header .header-text h2 {
     padding: 0;
     color: white;
     position: relative;
-    min-height: 100vh;
+    min-height: 120vh;
+    background-color: var(--grey);
 }
 
-.container .user h2 {
+.container .user .name-surname {
     font-size: 2.5em;
     margin: 0;
     padding: 0;
@@ -371,10 +392,11 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 0;
 }
 
 .popup {
@@ -399,11 +421,6 @@ footer {
     text-align: center;
     position: relative;
     color: var(--orange);
-}
-
-.sluzby{
-    text-align: left;
-    padding: 5px;
 }
 
 .share-popup {
@@ -460,64 +477,90 @@ footer {
     cursor: pointer;
 }
 
-/* Для мобильных устройств с шириной экрана меньше 768px */
-@media only screen and (max-width: 768px) {
-    header {
-        height: auto;
-        padding: 1em;
-        background-size: cover; /* Исправление фона */
-        background-position: center; /* Центрируем фон */
-        background-repeat: no-repeat; /* Отключаем повторение фона */
-    }
+.text {
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    word-break: break-word;
+    margin-top: 1.2em;
+    font-size: 1.2em;
+}
 
-    header .header-text h1 {
-        font-size: 3em;
-    }
+.actual-text h1 {
+    font-size: 3.2em;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
 
-    header .header-text h2 {
-        font-size: 2em;
-    }
+.actual-text h2 {
+    font-size: 2.1em;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: var(--orange);
+}
 
-    .header-img img {
-        width: 150px;
-        height: 150px;
-        margin-top: -10em;
-    }
+.sluzby {
+    display: grid;
+    /* grid-template-rows: 1fr 1fr; */
+    grid-template-columns: 1fr 1fr;
+    gap: 4em; /* Пробел между колонками */
+    padding: 0;
+    margin: 0;
+}
 
-    .buttons {
-        gap: 1em;
-        padding: 1em;
-        justify-content: space-around; /* Распределяем кнопки по всей ширине */
-    }
+.well {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: var(--orange);
+}
 
-    .btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
+.sluzby ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    .container {
-        padding: 1em;
-        min-height: auto;
-    }
+.sluzby ul h3 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    text-align: justify;
+}
 
-    .custom-list {
-        font-size: medium;
-    }
+.sluzby ul li {
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    text-align: justify;
+}
 
-    .custom-list li {
-        font-size: 1.2em;
-    }
+.sluzby ul li::before {
+    content: "•"; /* Символ перед пунктом списка */
+    color: var(--orange); /* Цвет символа */
+    margin-right: 0.5em;
+}
 
-    footer {
-        font-size: 0.8em;
-    }
+.contact {
+    margin-top: 1em; /* Отступ сверху */
+    padding: 1rem;
+    background-color: var(--grey); /* Или любой другой цвет */
+    color: white;
+    text-align: center;
+    flex-basis: auto;
+}
 
-    .text {
-        text-align: center;
-        position: relative;
-        max-width: 320px; 
-        word-break: break-word;
-        margin-top: 1.2em;
-    }
+.emphasis {
+    color: var(--orange);
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.emphasis:hover {
+    text-decoration: underline;
+}
+
+
+
 </style>

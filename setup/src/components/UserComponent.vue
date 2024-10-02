@@ -14,7 +14,6 @@
                 </div>
                 <h2 class="name-surname">{{ user.first_name }} {{ user.last_name }} </h2>
                 <p class="position">{{ user.position }}</p>
-                <!-- мне нужно создать 4 кнопки полукругом с разными иконками -->
                 <div class="buttons" ref="lol">
                     <button class="btn" @click="downloadPDF"><i class="fas fa-download"></i></button>
                     <a href="https://realicity.sk/" target="_blank"><button class="btn"><i
@@ -112,6 +111,7 @@
 
             <footer>
                 <p>© 2024 Realicity</p>
+                <!-- KHH Team: Kozlov, Haidosh, Hryshchenko -->
             </footer>
         </div>
     </div>

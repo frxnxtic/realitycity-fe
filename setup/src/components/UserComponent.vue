@@ -147,8 +147,8 @@ export default {
 
     methods: {
         fetchUser() {
-            const id = this.$route.params.id;
-            axios.get('http://localhost:3000/api/realtors/' + id)
+            const id = 1;
+            axios.get('api/realtors/' + id)
                 .then(response => {
                     this.user = response.data
                     console.log(response.data)
@@ -240,7 +240,7 @@ body {
 
 header {
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 2em;
     background-image: url("https://blenderartists.org/uploads/default/original/4X/6/9/2/692b2e29c5a043f7e2d510acd750003ad0fe13d2.jpeg");
     background-color: #fff;
@@ -312,6 +312,15 @@ hr {
 .img {
     border-width: 20px;
     border-color: rgba(255, 255, 255, 0.250);
+    width: -webkit-fill-available;
+}
+
+.img img {
+    width: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 header .header-text {
@@ -391,7 +400,7 @@ footer {
     text-align: center;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: -webkit-fill-available;
     height: 3rem;
     display: block;
     justify-content: center;
@@ -560,6 +569,71 @@ footer {
     text-decoration: underline;
 }
 
+/* Общий стиль для мобильных устройств */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        /* padding: 1em; */
+        background-size: cover;
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 4em;
+    }
+
+    .header-text h2 {
+        font-size: 2em;
+    }
+
+    .buttons {
+        gap: 1em;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 1em;
+        min-height: auto;
+    }
+
+    .user {
+        padding: 1rem 0;
+    }
+
+    .custom-list li {
+        margin: 0.5em 0;
+        font-size: 1em;
+    }
+
+    .header-img img {
+        margin-top: 10em;
+        width: 150px;
+        height: 150px;
+    }
+
+    .text, .actual-text {
+        font-size: 1em;
+    }
+
+    .sluzby {
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+
+    .contact {
+        font-size: 1em;
+    }
+}
 
 
 </style>

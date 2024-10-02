@@ -9,6 +9,15 @@ export default defineConfig({
     vue(),
   ],
   root: './setup',
+  build: {
+    outDir: "C:\\Users\\denys\\cardRealicity\\build"
+  },
+  devServer: {
+    Proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+      }
+    }},
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./setup/src', import.meta.url))

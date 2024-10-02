@@ -302,7 +302,7 @@ hr {
 .header-img img {
     object-fit: cover;
     border-radius: 50%;
-    width: 250px;
+    width: 300px;
     height: 300px;
     border-width: 20px;
     border-color: rgba(255, 255, 255, 0.250);
